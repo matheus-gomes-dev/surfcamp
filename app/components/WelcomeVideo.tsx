@@ -5,10 +5,18 @@ import Image from 'next/image';
 
 interface WelcomeVideoProps {
   dictionary: Record<string, string>;
+  lang: string;
 }
 
-const WelcomeVideo = ({ dictionary }: WelcomeVideoProps) => {
+const WelcomeVideo = ({ dictionary, lang }: WelcomeVideoProps) => {
   const videoRef = useRef<HTMLVideoElement>(null);
+
+  const handleBookClick = () => {
+    const phoneNumber = '5584999114283'; // +55 84 99911-4283 without special characters
+    const message = lang === 'pt' ? 'Olá, gostaria de reservar minha vaga para o surfcamp!' : 'Hello, I would like to book my spot for the surfcamp!';
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank');
+  };
 
   useEffect(() => {
     const video = videoRef.current;
@@ -61,6 +69,12 @@ const WelcomeVideo = ({ dictionary }: WelcomeVideoProps) => {
         <p className="text-lg drop-shadow-md">
           <b>{dictionary.welcomeSubtitle}</b>
         </p>
+        <button 
+          onClick={handleBookClick}
+          className="mt-4 px-6 py-3 bg-green-400 hover:bg-green-500 text-gray-900 font-medium rounded-md transition-colors duration-200 cursor-pointer drop-shadow-md w-32"
+        >
+          {dictionary.book}
+        </button>
       </div>
     </section>
   );

@@ -9,7 +9,7 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
 
   return (
     <div className="w-full">
-      <WelcomeVideo dictionary={dictionary} />
+      <WelcomeVideo dictionary={dictionary} lang={lang} />
       
       {/* Surfing Introduction Section */}
       <section className="py-16 px-4">
