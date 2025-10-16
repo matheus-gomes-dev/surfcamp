@@ -1,5 +1,6 @@
 import { Paper } from '@mui/material';
 import Image from 'next/image';
+import Link from 'next/link';
 
 interface ImageCardContentProps {
   imageSrc: string;
@@ -57,12 +58,12 @@ const ImageCardContent = ({
 
             {/* Button fixed at bottom */}
             <div className="pt-6 flex-shrink-0">
-              <a
+              <Link
                 href={link || '#'}
                 className="inline-flex items-center px-6 py-3 bg-green-400 hover:bg-green-500 text-gray-900 font-medium rounded-md transition-colors duration-200 cursor-pointer"
               >
                 {buttonLabel}
-              </a>
+              </Link>
             </div>
           </div>
         </div>

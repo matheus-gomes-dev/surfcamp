@@ -29,12 +29,15 @@ const Header = ({ dictionary, lang }: HeaderProps) => {
         <div className="flex justify-between items-center h-16">
           {/* Logo/Brand */}
           <div className="flex-shrink-0">
-            <Image 
-              src="/nfs-logo-texto.jpg" 
-              alt="Natal Free Surf Logo" 
-              width={150}
-              height={40}
-            />
+            <Link href={`/${lang}`}>
+              <Image 
+                src="/nfs-logo-texto.jpg" 
+                alt="Natal Free Surf Logo" 
+                width={150}
+                height={40}
+                className="cursor-pointer"
+              />
+            </Link>
           </div>
 
           {/* Desktop Menu */}

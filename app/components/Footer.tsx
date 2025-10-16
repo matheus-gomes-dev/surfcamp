@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import Link from 'next/link';
 
 interface FooterProps {
   dictionary: Record<string, string>;
@@ -44,15 +45,15 @@ const Footer = ({ dictionary }: FooterProps) => {
               {dictionary.usefulLinks}
             </h3>
             <div className="space-y-2">
-              <a href="/accommodation" className="block text-gray-600 hover:text-gray-900 transition-colors">
+              <Link href="/accommodation" className="block text-gray-600 hover:text-gray-900 transition-colors">
                 {dictionary.accommodation}
-              </a>
-              <a href="/surfcamp" className="block text-gray-600 hover:text-gray-900 transition-colors">
+              </Link>
+              <Link href="/surfcamp" className="block text-gray-600 hover:text-gray-900 transition-colors">
                 {dictionary.surfcamp}
-              </a>
-              <a href="#" className="block text-gray-600 hover:text-gray-900 transition-colors">
+              </Link>
+              <Link href="#" className="block text-gray-600 hover:text-gray-900 transition-colors">
                 {dictionary.contact}
-              </a>
+              </Link>
             </div>
           </div>
 
