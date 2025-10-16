@@ -54,7 +54,7 @@ const Footer = ({ dictionary, lang }: FooterProps) => {
               <Link href="/surfcamp" className="block text-gray-600 hover:text-gray-900 transition-colors">
                 {dictionary.surfcamp}
               </Link>
-              <button onClick={handleContactClick} className="block text-gray-600 hover:text-gray-900 transition-colors text-left cursor-pointer">
+              <button onClick={handleContactClick} className="text-gray-600 hover:text-gray-900 transition-colors text-center md:text-left cursor-pointer">
                 {dictionary.contact}
               </button>
             </div>
