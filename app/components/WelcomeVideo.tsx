@@ -60,7 +60,7 @@ const WelcomeVideo = ({ dictionary, lang }: WelcomeVideoProps) => {
           width={240}
           height={64}
         />
-        <p className="text-lg drop-shadow-md">
+        <p className="text-[20px] drop-shadow-md">
           <b>{dictionary.welcomeSubtitle}</b>
         </p>
         <div className="mt-4">
