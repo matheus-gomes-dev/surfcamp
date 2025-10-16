@@ -2,13 +2,16 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
+import { openWhatsAppBooking } from '../../helpers/whatsapp';
 
 interface FooterProps {
   dictionary: Record<string, string>;
   lang: string;
 }
 
-const Footer = ({ dictionary }: FooterProps) => {
+const Footer = ({ dictionary, lang }: FooterProps) => {
+  const handleContactClick = () => openWhatsAppBooking(lang);
+
   return (
     <footer className="bg-gray-200 py-4 px-6">
       <div className="max-w-7xl mx-auto">
@@ -51,9 +54,9 @@ const Footer = ({ dictionary }: FooterProps) => {
               <Link href="/surfcamp" className="block text-gray-600 hover:text-gray-900 transition-colors">
                 {dictionary.surfcamp}
               </Link>
-              <Link href="#" className="block text-gray-600 hover:text-gray-900 transition-colors">
+              <button onClick={handleContactClick} className="block text-gray-600 hover:text-gray-900 transition-colors text-left cursor-pointer">
                 {dictionary.contact}
-              </Link>
+              </button>
             </div>
           </div>
 
