@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { headers } from 'next/headers';
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -10,13 +11,13 @@ export const metadata: Metadata = {
 };
 
 export default async function RootLayout({ 
-  children, 
-  params 
+  children
 }: {
   children: React.ReactNode;
-  params: Promise<{ lang: string }>;
 }) {
-  const { lang } = await params;
+  // Get the language from middleware header
+  const headersList = await headers();
+  const lang = headersList.get('x-locale') || 'en';
 
   return (
     <html lang={lang}>

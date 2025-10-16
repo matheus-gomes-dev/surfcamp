@@ -36,11 +36,19 @@ export function middleware(request) {
     (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`
   )
  
-  if (pathnameHasLocale) return
+  if (pathnameHasLocale) {
+    // Extract the locale from the pathname and add it as a header
+    const locale = pathname.split('/')[1]
+    const response = NextResponse.next()
+    response.headers.set('x-locale', locale)
+    return response
+  }
 
   const locale = getLocale(request)
   request.nextUrl.pathname = `/${locale}${pathname}`
-  return NextResponse.redirect(request.nextUrl)
+  const response = NextResponse.redirect(request.nextUrl)
+  response.headers.set('x-locale', locale)
+  return response
 }
 
 export const config = {
