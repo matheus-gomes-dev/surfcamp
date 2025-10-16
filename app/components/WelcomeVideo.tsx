@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from 'react';
 import Image from 'next/image';
-import { openWhatsAppBooking } from '../../helpers/whatsapp';
+import BookButton from './BookButton';
 
 interface WelcomeVideoProps {
   dictionary: Record<string, string>;
@@ -11,8 +11,6 @@ interface WelcomeVideoProps {
 
 const WelcomeVideo = ({ dictionary, lang }: WelcomeVideoProps) => {
   const videoRef = useRef<HTMLVideoElement>(null);
-
-  const handleBookClick = () => openWhatsAppBooking(lang);
 
   useEffect(() => {
     const video = videoRef.current;
@@ -65,12 +63,9 @@ const WelcomeVideo = ({ dictionary, lang }: WelcomeVideoProps) => {
         <p className="text-lg drop-shadow-md">
           <b>{dictionary.welcomeSubtitle}</b>
         </p>
-        <button 
-          onClick={handleBookClick}
-          className="mt-4 px-6 py-3 bg-green-400 hover:bg-green-500 text-gray-900 font-medium rounded-md transition-colors duration-200 cursor-pointer drop-shadow-md w-32"
-        >
-          {dictionary.book}
-        </button>
+        <div className="mt-4">
+          <BookButton dictionary={dictionary} lang={lang} />
+        </div>
       </div>
     </section>
   );

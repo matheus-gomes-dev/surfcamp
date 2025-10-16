@@ -1,4 +1,5 @@
 import getDictionary from '../../../lib/dictionaries';
+import BookButton from '../../components/BookButton';
 
 export default async function AccommodationPage({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -19,9 +20,10 @@ export default async function AccommodationPage({ params }: { params: Promise<{ 
         {/* Centered Content */}
         <div className="relative z-10 h-full flex items-center justify-center">
           <div className="text-center">
-            <h1 className="text-4xl md:text-6xl font-bold text-white drop-shadow-lg">
+            <h1 className="text-4xl md:text-6xl font-bold text-white drop-shadow-lg mb-6">
               {dictionary.accommodationTitle}
             </h1>
+            <BookButton dictionary={dictionary} lang={lang} />
           </div>
         </div>
       </section>

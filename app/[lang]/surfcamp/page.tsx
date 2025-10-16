@@ -1,4 +1,5 @@
 import getDictionary from '../../../lib/dictionaries';
+import BookButton from '../../components/BookButton';
 
 export default async function SurfcampPage({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -12,16 +13,17 @@ export default async function SurfcampPage({ params }: { params: Promise<{ lang:
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: "url('/surf-instructor.jpg')"
+            backgroundImage: "url('/wave-rider.jpg')"
           }}
         />
         
         {/* Centered Content */}
         <div className="relative z-10 h-full flex items-center justify-center">
           <div className="text-center">
-            <h1 className="text-4xl md:text-6xl font-bold text-white drop-shadow-lg">
+            <h1 className="text-4xl md:text-6xl font-bold text-white drop-shadow-lg mb-6">
               {dictionary.surfcampTitle}
             </h1>
+            <BookButton dictionary={dictionary} lang={lang} />
           </div>
         </div>
       </section>
