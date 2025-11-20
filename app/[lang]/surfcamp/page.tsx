@@ -13,7 +13,7 @@ export default async function SurfcampPage({ params }: { params: Promise<{ lang:
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: "url('/wave-rider.jpg')"
+            backgroundImage: "url('/instrutores-alunos.jpg')"
           }}
         />
         

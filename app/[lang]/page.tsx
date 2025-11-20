@@ -2,6 +2,7 @@ import WelcomeVideo from '../components/WelcomeVideo';
 import ImageCardContent from '../components/ImageCardContent';
 import WaveAnimation from '../components/WaveAnimation';
 import getDictionary from '../../lib/dictionaries';
+import ReviewsSlider from '../components/ReviewsSlider';
 
 export default async function Home({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -45,7 +46,7 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
           />
           
           <ImageCardContent 
-            imageSrc="/surf-instructor.jpg"
+            imageSrc="/instrutores-alunos.jpg"
             imageAlt="Surf instructor teaching on the beach"
             subtitle={dictionary.surfLessonsSubtitle}
             title={dictionary.surfLessonsTitle}
@@ -63,6 +64,18 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
             buttonLabel={dictionary.readMore}
             link={`/${lang}/explore`}
           />
+        </div>
+      </section>
+      
+      {/* Google Review Demo Section */}
+      <section className="py-16 px-4 bg-blue-50">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-8 text-center">
+            {lang === 'pt' ? 'O que dizem sobre nós' : 'What Our Customers Say'}
+          </h2>
+        </div>
+        <div className="m-auto">
+          <ReviewsSlider lang={lang} />
         </div>
       </section>
     </div>
