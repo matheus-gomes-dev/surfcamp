@@ -22,7 +22,7 @@ const ImageCardContent = ({
   link
 }: ImageCardContentProps) => {
   return (
-    <Paper elevation={1} className="shadow-lg overflow-hidden w-[90vw] lg:w-[30vw] mx-auto md:h-[800px] lg:h-[600px] flex flex-col">
+    <Paper elevation={1} className="shadow-lg overflow-hidden w-[90vw] lg:w-[30vw] mx-auto min-h-[600px] flex flex-col">
       <section className="bg-white h-full flex flex-col">
         {/* Image */}
         <div className="relative w-full flex-shrink-0">
