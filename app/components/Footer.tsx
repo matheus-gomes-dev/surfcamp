@@ -35,9 +35,8 @@ const Footer = ({ dictionary, lang }: FooterProps) => {
               Natal Free Surf
             </h3>
             <div className="space-y-2 text-gray-600">
-              <p>Av. Praia de Cotovelo, 3018</p>
-              <p>59161-175 Parnamirim, RN</p>
-              <p>natalfreesurf@gmail.com</p>
+              <p>Av. Praia de Cotovelo, 5A</p>
+              <p>59161-030 Parnamirim, RN</p>
               <p>+55 84 99911-4283</p>
             </div>
           </div>

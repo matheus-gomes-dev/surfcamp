@@ -21,7 +21,7 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
           <p className="text-lg md:text-xl text-gray-600 leading-relaxed mb-6">
             {dictionary.surfingText1}
           </p>
-          <p className="text-lg text-gray-600 leading-relaxed">
+          <p className="text-lg md:text-xl text-gray-600 leading-relaxed mb-6">
             {dictionary.surfingText2}
           </p>
           
@@ -36,7 +36,7 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
       <section className="py-16 lg:px-16">
         <div className="flex flex-col lg:flex-row gap-8 lg:gap-6 justify-center items-stretch">
           <ImageCardContent 
-            imageSrc="/private-room.jpg"
+            imageSrc="/private-room-large-width-1.jpeg"
             imageAlt="Beautiful hostel room with bunk beds"
             subtitle={dictionary.accommodationsSubtitle}
             title={dictionary.accommodationsTitle}
