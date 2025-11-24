@@ -37,7 +37,7 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
         <div className="flex flex-col lg:flex-row gap-8 lg:gap-6 justify-center items-stretch">
           <ImageCardContent 
             imageSrc="/private-room-large-width-1.jpeg"
-            imageAlt="Beautiful hostel room with bunk beds"
+            imageAlt="Beautiful room with bunk beds"
             subtitle={dictionary.accommodationsSubtitle}
             title={dictionary.accommodationsTitle}
             content={dictionary.accommodationsContent}
