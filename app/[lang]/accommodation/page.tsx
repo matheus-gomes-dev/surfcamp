@@ -40,7 +40,7 @@ export default async function AccommodationPage({ params }: { params: Promise<{ 
       </section>
 
       {/* Image Card Content Section */}
-      <section className="py-16 lg:px-16">
+      <section className="lg:px-16">
         <div className="flex flex-col lg:flex-row gap-8 lg:gap-6 justify-center items-stretch">
           <ImageCardContent 
             imageSrc="/private-room-large-width-1.jpeg"
@@ -73,7 +73,7 @@ export default async function AccommodationPage({ params }: { params: Promise<{ 
             {dictionary.accommodationContent2}
           </p>
         </div>
-        <div className='flex justify-center'>
+        <div className='flex justify-center py-8'>
           <Image src='/beach-view.jpeg' alt={dictionary.beachViewAlt} width={360} height={630} />
         </div>
       </section>
