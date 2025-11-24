@@ -1,6 +1,7 @@
 import { Paper } from '@mui/material';
 import Image from 'next/image';
 import Link from 'next/link';
+import BookButton from './BookButton';
 
 interface ImageCardContentProps {
   imageSrc: string;
@@ -8,8 +9,11 @@ interface ImageCardContentProps {
   subtitle: string;
   title: string;
   content: string;
-  buttonLabel: string;
+  buttonLabel?: string;
+  dictionary: Record<string, string>;
+  lang: string;
   link?: string;
+  bookRedirect?: boolean
 }
 
 const ImageCardContent = ({ 
@@ -18,9 +22,31 @@ const ImageCardContent = ({
   subtitle, 
   title, 
   content, 
-  buttonLabel, 
-  link
+  buttonLabel = '', 
+  link,
+  bookRedirect,
+  dictionary,
+  lang,
 }: ImageCardContentProps) => {
+  const renderButton = () => {
+    if (!link && !bookRedirect) return null;
+    if (bookRedirect) {
+      return (
+        <BookButton dictionary={dictionary} lang={lang} />
+      );
+    } else {
+      return (
+        <div className="pt-6 flex-shrink-0">
+          <Link
+            href={link || '#'}
+            className="inline-flex items-center px-6 py-3 bg-green-400 hover:bg-green-500 text-gray-900 font-medium rounded-md transition-colors duration-200 cursor-pointer"
+          >
+            {buttonLabel}
+          </Link>
+        </div>
+      );
+    }
+  }
   return (
     <Paper elevation={1} className="shadow-lg overflow-hidden w-[90vw] lg:w-[30vw] mx-auto min-h-[600px] flex flex-col">
       <section className="bg-white h-full flex flex-col">
@@ -57,14 +83,7 @@ const ImageCardContent = ({
             </div>
 
             {/* Button fixed at bottom */}
-            <div className="pt-6 flex-shrink-0">
-              <Link
-                href={link || '#'}
-                className="inline-flex items-center px-6 py-3 bg-green-400 hover:bg-green-500 text-gray-900 font-medium rounded-md transition-colors duration-200 cursor-pointer"
-              >
-                {buttonLabel}
-              </Link>
-            </div>
+            {renderButton()}
           </div>
         </div>
       </section>

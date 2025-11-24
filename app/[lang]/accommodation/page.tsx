@@ -1,5 +1,7 @@
+import ImageCardContent from '@/app/components/ImageCardContent';
 import getDictionary from '../../../lib/dictionaries';
 import BookButton from '../../components/BookButton';
+import Image from 'next/image';
 
 export default async function AccommodationPage({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -13,7 +15,7 @@ export default async function AccommodationPage({ params }: { params: Promise<{ 
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: "url('/hostel-room.jpg')"
+            backgroundImage: "url('/private-room-large-width-1.jpeg')"
           }}
         />
         
@@ -32,8 +34,47 @@ export default async function AccommodationPage({ params }: { params: Promise<{ 
       <section className="py-16 px-4">
         <div className="max-w-4xl mx-auto text-center">
           <p className="text-lg md:text-xl text-gray-600 leading-relaxed mb-6">
-            {dictionary.accommodationContent}
+            {dictionary.accommodationContent1}
           </p>
+        </div>
+      </section>
+
+      {/* Image Card Content Section */}
+      <section className="py-16 lg:px-16">
+        <div className="flex flex-col lg:flex-row gap-8 lg:gap-6 justify-center items-stretch">
+          <ImageCardContent 
+            imageSrc="/private-room-large-width-1.jpeg"
+            imageAlt="Private room with comfortable bed and decor"
+            subtitle={dictionary.accommodationsSubtitle}
+            title={dictionary.privateRoom}
+            content={dictionary.privateRoomContent}
+            buttonLabel={dictionary.book}
+            dictionary={dictionary}
+            lang={lang}
+            bookRedirect
+          />
+          <ImageCardContent 
+            imageSrc="/shared-room.jpg"
+            imageAlt="Shared room with comfortable beds and decor"
+            subtitle={dictionary.accommodationsSubtitle}
+            title={dictionary.sharedRoom}
+            content={dictionary.sharedRoomContent}
+            dictionary={dictionary}
+            lang={lang}
+            bookRedirect
+          />
+        </div>
+      </section>
+
+      {/* Content Section */}
+      <section className="py-16 px-4">
+        <div className="max-w-4xl mx-auto text-center">
+          <p className="text-lg md:text-xl text-gray-600 leading-relaxed mb-6">
+            {dictionary.accommodationContent2}
+          </p>
+        </div>
+        <div className='flex justify-center'>
+          <Image src='/beach-view.jpeg' alt={dictionary.beachViewAlt} width={360} height={630} />
         </div>
       </section>
     </div>

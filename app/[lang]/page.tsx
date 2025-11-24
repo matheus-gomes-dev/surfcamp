@@ -36,13 +36,15 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
       <section className="py-16 lg:px-16">
         <div className="flex flex-col lg:flex-row gap-8 lg:gap-6 justify-center items-stretch">
           <ImageCardContent 
-            imageSrc="/hostel-room.jpg"
+            imageSrc="/private-room.jpg"
             imageAlt="Beautiful hostel room with bunk beds"
             subtitle={dictionary.accommodationsSubtitle}
             title={dictionary.accommodationsTitle}
             content={dictionary.accommodationsContent}
             buttonLabel={dictionary.readMore}
             link={`/${lang}/accommodation`}
+            dictionary={dictionary}
+            lang={lang}
           />
           
           <ImageCardContent 
@@ -53,6 +55,8 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
             content={dictionary.surfLessonsContent}
             buttonLabel={dictionary.readMore}
             link={`/${lang}/surfcamp`}
+            dictionary={dictionary}
+            lang={lang}
           />
           
           <ImageCardContent 
@@ -63,6 +67,8 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
             content={dictionary.adventuresContent}
             buttonLabel={dictionary.readMore}
             link={`/${lang}/explore`}
+            dictionary={dictionary}
+            lang={lang}
           />
         </div>
       </section>
