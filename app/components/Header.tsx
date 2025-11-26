@@ -18,7 +18,7 @@ const Header = ({ dictionary, lang }: HeaderProps) => {
   const menuItems = [
     { label: dictionary.home, href: `/${lang}`, isContact: false },
     { label: dictionary.accommodation, href: `/${lang}/accommodation`, isContact: false },
-    { label: dictionary.surfcamp, href: `/${lang}/surfcamp`, isContact: false },
+    { label: dictionary.surfLessons, href: `/${lang}/surf-lessons`, isContact: false },
     { label: dictionary.contact, href: `/${lang}#contact`, isContact: true }
   ];
 

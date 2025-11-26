@@ -1,0 +1,77 @@
+/* Container Principal */
+.onda-senoidal-container {
+    position: relative;
+    text-align: center;
+    overflow: hidden; /* Importante para garantir que o SVG se encaixe */
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    background-color: #fff; /* Fundo do conteúdo principal */
+}
+
+/* Estilo Comum para SVGs (Ondas) */
+.onda-top, .onda-bottom {
+    width: 100%;
+    height: 100px; /* Ajuste a altura para mudar a intensidade da onda */
+    display: block;
+}
+
+/* Onda Superior */
+.onda-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10; /* Fica acima do conteúdo */
+    fill: #4fc3f7; /* Azul claro para o topo da onda */
+    margin-bottom: 250px;
+}
+
+.onda-top path {
+    fill: #4fc3f7; /* Cor da área preenchida */
+}
+
+/* Onda Inferior */
+.onda-bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 10; /* Fica acima do conteúdo */
+    fill: #0277bd; /* Azul escuro para a base da onda */
+}
+
+.onda-bottom path {
+    fill: #0277bd; /* Cor da área preenchida */
+}
+
+/* Conteúdo da Div */
+.conteudo-onda {
+    padding: 60px 20px; /* Espaço para não colidir com as ondas */
+    position: relative;
+    z-index: 5; /* Garante que o conteúdo fique visível */
+}
+
+.conteudo-onda h2 {
+    color: #00796b; /* Verde-água */
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.conteudo-onda p {
+    color: #555;
+    margin-bottom: 25px;
+    line-height: 1.6;
+}
+
+.conteudo-onda button {
+    background-color: #ff9800; /* Laranja vibrante (sol ou areia) */
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.conteudo-onda button:hover {
+    background-color: #fb8c00;
+}

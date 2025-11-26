@@ -54,7 +54,7 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
             title={dictionary.surfLessonsTitle}
             content={dictionary.surfLessonsContent}
             buttonLabel={dictionary.readMore}
-            link={`/${lang}/surfcamp`}
+            link={`/${lang}/surf-lessons`}
             dictionary={dictionary}
             lang={lang}
           />
