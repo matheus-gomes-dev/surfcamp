@@ -1,5 +1,7 @@
+import ImageCardContent from '@/app/components/ImageCardContent';
 import getDictionary from '../../../lib/dictionaries';
 import BookButton from '../../components/BookButton';
+import PhotosAlbum from '@/app/components/PhotosAlbum';
 
 export default async function ExplorePage({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -35,6 +37,57 @@ export default async function ExplorePage({ params }: { params: Promise<{ lang: 
             {dictionary.exploreContent}
           </p>
         </div>
+      </section>
+
+      <section className="lg:px-16">
+        <div className="flex flex-col lg:flex-row gap-8 lg:gap-6 justify-center items-stretch">
+          <ImageCardContent 
+            imageSrc="/baia-formosa.jpg"
+            imageAlt={dictionary.exploreBaiaFormosaAlt}
+            title='Baía Formosa'
+            content={dictionary.exploreCard1Content}
+            dictionary={dictionary}
+            lang={lang}
+            bookRedirect
+          />
+          <ImageCardContent 
+            imageSrc="/aerial-photo-of-baia-dos-golfinhos.webp"
+            imageAlt={dictionary.explorePipaAlt}
+            title={dictionary.exploreCard2Title}
+            content={dictionary.exploreCard2Content}
+            dictionary={dictionary}
+            lang={lang}
+            bookRedirect
+          />
+        </div>
+      </section>
+
+      <section>
+        <PhotosAlbum
+          photos={[
+            {
+              url: '/surf-trip-1.jpg',
+              alt: dictionary.exploreAlbumAlt,
+              id: 1,
+            },
+            {
+              url: '/surf-trip-4.webp',
+              alt: dictionary.exploreAlbumAlt,
+              id: 2,
+            },
+            {
+              url: '/surf-trip-3.jpg',
+              alt: dictionary.exploreAlbumAlt,
+              id: 3,
+            },
+            {
+              url: '/surf-trip-5.webp',
+              alt: dictionary.exploreAlbumAlt,
+              id: 4,
+            },
+          ]}
+          title="Surf trips"
+        />
       </section>
     </div>
   );

@@ -6,7 +6,7 @@ import BookButton from './BookButton';
 interface ImageCardContentProps {
   imageSrc: string;
   imageAlt: string;
-  subtitle: string;
+  subtitle?: string;
   title: string;
   content: string;
   buttonLabel?: string;
@@ -69,9 +69,9 @@ const ImageCardContent = ({
             {/* Text content that grows */}
             <div className="flex-grow">
               <div className="mb-6">
-                <p className="text-sm font-medium text-gray-500 uppercase tracking-wider mb-3">
+                {subtitle && <p className="text-sm font-medium text-gray-500 uppercase tracking-wider mb-3">
                   {subtitle}
-                </p>
+                </p>}
                 <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
                   {title}
                 </h2>
