@@ -48,6 +48,7 @@ const WelcomeVideo = ({ dictionary, lang }: WelcomeVideoProps) => {
         playsInline
         preload="auto"
         controls={false}
+        poster='/video-poster.PNG'
       >
         <source src="/surf-video.mp4" type="video/mp4" />
       </video>
