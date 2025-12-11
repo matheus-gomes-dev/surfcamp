@@ -2,6 +2,7 @@ import ImageCardContent from '@/app/components/ImageCardContent';
 import getDictionary from '../../../lib/dictionaries';
 import BookButton from '../../components/BookButton';
 import Image from 'next/image';
+import PhotosAlbum from '@/app/components/PhotosAlbum';
 
 export default async function AccommodationPage({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -69,13 +70,38 @@ export default async function AccommodationPage({ params }: { params: Promise<{ 
       {/* Content Section */}
       <section className="py-16 px-4">
         <div className="max-w-4xl mx-auto text-center">
-          <p className="text-lg md:text-xl text-gray-600 leading-relaxed mb-6">
+          <p className="text-lg md:text-xl text-gray-600 leading-relaxed">
             {dictionary.accommodationContent2}
           </p>
         </div>
-        <div className='flex justify-center py-8'>
-          <Image src='/beach-view.jpeg' alt={dictionary.beachViewAlt} width={360} height={630} />
-        </div>
+      </section>
+
+      <section>
+        <PhotosAlbum
+        photos={[
+          {
+            url: '/surfcamp4.jpeg',
+            alt: dictionary.accommodationAlt,
+            id: 4,
+          },
+          {
+            url: '/surfcamp1.jpeg',
+            alt: dictionary.accommodationAlt,
+            id: 1,
+          },
+          {
+            url: '/surfcamp9.jpeg',
+            alt: dictionary.accommodationAlt,
+            id: 9,
+          },
+          {
+            url: '/surfcamp11.jpeg',
+            alt: dictionary.accommodationAlt,
+            id: 11,
+          },
+        ]}
+        title="Surfcamp"
+        />
       </section>
     </div>
   );
