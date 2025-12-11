@@ -14,7 +14,7 @@
     "@formatjs/intl-localematcher": "^0.6.2",
     "@mui/material": "^7.3.4",
     "negotiator": "^1.0.0",
-    "next": "15.5.4",
+    "next": "15.5.7",
     "react": "19.1.0",
     "react-dom": "19.1.0",
     "react-horizontal-scrolling-menu": "^8.2.0"
