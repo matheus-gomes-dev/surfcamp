@@ -2,13 +2,20 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { headers } from 'next/headers';
+import getDictionary from '@/lib/dictionaries';
 
 const inter = Inter({ subsets: ["latin"] });
 
-export const metadata: Metadata = {
-  title: "Natal Free Surf - Brazilian Surf Camp Experience",
-  description: "Experience world-class surfing in Natal, Brazil. Professional surf lessons, comfortable accommodation, and authentic Brazilian culture at our premier surf camp.",
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const headersList = await headers();
+  const lang = headersList.get('x-locale') || 'en';
+  const dict = getDictionary(lang);
+  
+  return {
+    title: dict.metaTitle,
+    description: dict.metaDescription,
+  };
+}
 
 export default async function RootLayout({ 
   children
