@@ -55,7 +55,7 @@ export default async function AccommodationPage({ params }: { params: Promise<{ 
             bookRedirect
           />
           <ImageCardContent 
-            imageSrc="/shared-room.jpg"
+            imageSrc="/shared-room2.jpeg"
             imageAlt="Shared room with comfortable beds and decor"
             subtitle={dictionary.accommodationsSubtitle}
             title={dictionary.sharedRoom}
@@ -76,6 +76,12 @@ export default async function AccommodationPage({ params }: { params: Promise<{ 
         </div>
       </section>
 
+      <section className='flex justify-center'>
+        <video src="/drone-video.mp4" controls className="max-h-[600px] object-cover">
+          Sorry, your browser does not support embedded videos.
+        </video>
+      </section>
+
       <section>
         <PhotosAlbum
         photos={[
@@ -90,7 +96,7 @@ export default async function AccommodationPage({ params }: { params: Promise<{ 
             id: 1,
           },
           {
-            url: '/surfcamp9.jpeg',
+            url: '/surfcamp13.PNG',
             alt: dictionary.accommodationAlt,
             id: 9,
           },
